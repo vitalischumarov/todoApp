@@ -1,10 +1,11 @@
 import "./Message.scss";
 
-function Message({ status }) {
+function Message({ status, text }) {
+  console.log(text);
   if (!status) {
-    return <span className="message">text</span>;
+    return <span className="message">{text}</span>;
   } else {
-    return <span className="message done">text</span>;
+    return <span className="message done">{text}</span>;
   }
 }
 

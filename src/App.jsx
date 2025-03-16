@@ -20,7 +20,6 @@ function App() {
       };
       setNewToDo([...listOfAllToDos, todo]);
       setInput("");
-      console.log(listOfAllToDos);
     }
   }
 
@@ -35,7 +34,7 @@ function App() {
         inputAction={handleInput}
         buttonAction={pressedSaveButton}
       ></Header>
-      <ToDoBody></ToDoBody>
+      <ToDoBody allTasks={listOfAllToDos}></ToDoBody>
     </div>
   );
 }
