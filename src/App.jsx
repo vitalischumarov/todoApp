@@ -27,6 +27,17 @@ function App() {
     return Math.floor(Math.random() * (1000 - 1 + 1) + 1);
   }
 
+  function deleteTask(id) {
+    console.log("delete action performed");
+    let newListOfTasks = [];
+    for (let i = 0; i < listOfAllToDos.length; i++) {
+      if (id !== listOfAllToDos[i].id) {
+        newListOfTasks.push(listOfAllToDos[i]);
+      }
+    }
+    setNewToDo(newListOfTasks);
+  }
+
   return (
     <div className="app">
       <Header
@@ -34,7 +45,7 @@ function App() {
         inputAction={handleInput}
         buttonAction={pressedSaveButton}
       ></Header>
-      <ToDoBody allTasks={listOfAllToDos}></ToDoBody>
+      <ToDoBody allTasks={listOfAllToDos} deleteAction={deleteTask}></ToDoBody>
     </div>
   );
 }

@@ -4,13 +4,11 @@ import Message from "./Message";
 import Checkbox from "./Checkbox";
 import Button from "./Button";
 
-function ToDo({ singleTask }) {
-  console.log("ich bin ein sigle Todo:");
-  console.log(singleTask);
+function ToDo({ singleTask, deleteAction }) {
   const [checked, setCheck] = useState(false);
 
   function deleteTask() {
-    action(id);
+    deleteAction(singleTask.id);
   }
 
   function checkStatus(value) {
@@ -25,7 +23,11 @@ function ToDo({ singleTask }) {
     <div className="todo">
       <Checkbox changeStatus={checkStatus} currentValue={checked}></Checkbox>
       <Message status={checked} text={singleTask.task}></Message>
-      <Button title={"delete"}></Button>
+      <Button
+        title={"delete"}
+        deleteAction={deleteTask}
+        action={"delete"}
+      ></Button>
     </div>
   );
 }

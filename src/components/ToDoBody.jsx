@@ -1,13 +1,12 @@
 import "./ToDoBody.scss";
 import ToDo from "./ToDo";
 
-function ToDoBody({ allTasks }) {
-  console.log("body");
+function ToDoBody({ allTasks, deleteAction }) {
   return (
     <div className="todoBody">
       {allTasks.map((element) => {
         console.log(element);
-        return <ToDo singleTask={element}></ToDo>;
+        return <ToDo singleTask={element} deleteAction={deleteAction}></ToDo>;
       })}
     </div>
   );
