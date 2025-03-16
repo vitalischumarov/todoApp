@@ -1,3 +1,5 @@
+import "./InsertField.scss";
+
 function InsertField({ input, inputAction }) {
   return (
     <input
